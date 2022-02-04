@@ -8,7 +8,8 @@ enum MessageError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .noneLevelNotAllowed:
-            return "Messages are not allowed to have a level of `.none`. Please give this message an accepted level (`.error` or above) and try again."
+            return "Messages are not allowed to have a level of `.none`."
+                + " Please give this message an accepted level (`.error` or above) and try again."
         }
     }
 }

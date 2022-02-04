@@ -1,7 +1,6 @@
 # Rules
 
 disabled_rules:
-  - line_length
   - todo
 
 opt_in_rules:
@@ -30,7 +29,8 @@ opt_in_rules:
 # Locations
 
 included:
-  - {{AllFoldersContainingFilesToLint}}
+  - Sources
+  - Tests
 
 # Rule Customizations
 
@@ -40,42 +40,42 @@ cyclomatic_complexity:
 file_header:
   forbidden_pattern: "[^\n]"
 
+identifier_name:
+  excluded:
+    - id
+
 trailing_comma:
   mandatory_comma: true
 
 type_contents_order:
   order:
-	- case
-	- type_alias
-	- associated_type
-	- type_property
-	- instance_property
-	- ib_inspectable
-	- ib_outlet
-	- initializer
-	- deinitializer
-	- type_method
-	- view_life_cycle_method
-	- ib_action
-	- other_method
-	- subscript
-	- subtype
-
-variable_name:
-  excluded:
-	- id
+  - case
+  - type_alias
+  - associated_type
+  - type_property
+  - instance_property
+  - ib_inspectable
+  - ib_outlet
+  - initializer
+  - deinitializer
+  - type_method
+  - view_life_cycle_method
+  - ib_action
+  - other_method
+  - subscript
+  - subtype
 
 # Custom Rules
 
 custom_rules:
   attribute_with_parameter:
-	severity: warning
-	regex: "@\\w*\\([^\\n]*\\)[^\\n]+"
-	name: "Attribute with Parameter"
-	message: "Attributes with parameters should be on their own line"
+    severity: warning
+    regex: "@\\w*\\([^\\n]*\\)[^\\n]+"
+    name: "Attribute with Parameter"
+    message: "Attributes with parameters should be on their own line"
 
   attribute_without_parameter:
-	severity: warning
-	regex: "@\\w*\\n"
-	name: "Attribute without Parameters"
-	message: "Attributes without parameters should be on the same line as declaration"
+    severity: warning
+    regex: "@\\w*\\n"
+    name: "Attribute without Parameters"
+    message: "Attributes without parameters should be on the same line as declaration"

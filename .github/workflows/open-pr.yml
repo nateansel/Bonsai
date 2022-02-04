@@ -9,6 +9,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: Repository checkout
+        uses: actions/checkout@v2
+
       - name: Lint
         run: swiftlint
 
