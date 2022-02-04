@@ -1,0 +1,22 @@
+name: Merge to main
+
+on:
+  push:
+    branches:
+      - main
+      - add-workflows
+
+jobs:
+  unit_tests:
+    name: Run Unit Tests
+    runs-on: macos-latest
+
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v2
+
+      - name: Build for macOS
+        run: swift build -v
+
+      - name: Run macOS tests
+        run: swift test -v
