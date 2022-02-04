@@ -1,9 +1,7 @@
 name: Open PR
 
 on:
-  push:
-    branches:
-      - add-workflows
+  pull_request:
 
 jobs:
   lint:
