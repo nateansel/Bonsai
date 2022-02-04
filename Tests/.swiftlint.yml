@@ -1,0 +1,4 @@
+# Rules
+
+disabled_rules:
+  - sorted_imports
