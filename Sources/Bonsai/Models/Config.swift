@@ -8,4 +8,11 @@ public struct Config {
 
     /// The level at which the `Logger` should be logging messages.
     public let level: Level
+
+    /// Creates a new `Config` object.
+    ///
+    /// - parameter level: The level at which the `Logger` should be logging messages.
+    public init(level: Level) {
+        self.level = level
+    }
 }
